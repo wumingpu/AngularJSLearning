@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="col-md-12">
+    <iframe id="UploadFrame" src="/Home/Index" width="50%" frameborder="0"></iframe>
+</div>
+<script type="text/javascript">
+    //function iframeAutoFit(iframeObj) {
+    //    alert(iframeObj);
+    //    setTimeout(function () {
+    //        if (!iframeObj) return;
+    //        iframeObj.height = (iframeObj.Document ? iframeObj.Document.body.scrollHeight : iframeObj.contentDocument.body.offsetHeight);
+    //    }, 200)
+    //}
+    function reinitIframe() {
+        var iframe = document.getElementById("UploadFrame");
+        try {
+            //var bWidth = iframe.contentWindow.document.body.scrollWidth;
+            //var dWidth = iframe.contentWindow.document.documentElement.scrollWidth;
+            //var width = math.max(bWidth, dWidth);
+            //iframe.width = width;
+
+            var bHeight = iframe.contentWindow.document.body.scrollHeight;
+            var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+            var height = Math.max(bHeight, dHeight);
+            iframe.height = height;
+
+            
+
+            console.log(height);
+            //console.log(width);
+        } catch (ex) { }
+    }
+    window.setInterval("reinitIframe()", 200);
+</script>
+
