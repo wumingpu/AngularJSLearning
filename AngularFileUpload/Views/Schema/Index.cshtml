@@ -4,7 +4,7 @@
 }
 
 <div class="col-md-12">
-    <iframe id="UploadFrame" src="/Home/Index" width="50%" frameborder="0"></iframe>
+    <iframe id="UploadFrame" name="UploadFrame" src="/Home/FilesUpload" width="50%" frameborder="0"></iframe>
 </div>
 <script type="text/javascript">
     //function iframeAutoFit(iframeObj) {
@@ -14,7 +14,12 @@
     //        iframeObj.height = (iframeObj.Document ? iframeObj.Document.body.scrollHeight : iframeObj.contentDocument.body.offsetHeight);
     //    }, 200)
     //}
+    function callbackUploadFile(filename) {
+        alert(filename);
+    }
+
     function reinitIframe() {
+        //window.UploadFrame.InitFileUpload(1);
         var iframe = document.getElementById("UploadFrame");
         try {
             //var bWidth = iframe.contentWindow.document.body.scrollWidth;

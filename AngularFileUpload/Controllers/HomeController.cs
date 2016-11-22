@@ -14,6 +14,11 @@ namespace AngularFileUpload.Controllers
             return View();
         }
 
+        public ActionResult FilesUpload()
+        {
+            return View();
+        }
+
         [HttpPost]
         public void upload(HttpPostedFile context)/*System.Web.HttpPostedFileBase aFile*/
         {
