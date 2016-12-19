@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B421974B-7855-4512-9330-6C2630A503AC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UIGridLearning</RootNamespace>
+    <AssemblyName>UIGridLearning</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="WebCompontent\angularjs-1.2.32.min.js" />
+    <Content Include="WebCompontent\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="WebCompontent\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="WebCompontent\bootstrap\css\bootstrap.css" />
+    <Content Include="WebCompontent\bootstrap\css\bootstrap.min.css" />
+    <Content Include="WebCompontent\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="WebCompontent\bootstrap\js\bootstrap.js" />
+    <Content Include="WebCompontent\bootstrap\js\bootstrap.min.js" />
+    <Content Include="WebCompontent\bootstrap\js\npm.js" />
+    <Content Include="WebCompontent\HomeStype.css" />
+    <Content Include="WebCompontent\jQuery-3.1.1.min.js" />
+    <Content Include="WebCompontent\ui-grid-dist\4.0.0\ui-grid.svg" />
+    <Content Include="WebCompontent\ui-grid-dist\ui-grid.css" />
+    <Content Include="WebCompontent\ui-grid-dist\ui-grid.js" />
+    <Content Include="WebCompontent\ui-grid-dist\ui-grid.min.css" />
+    <Content Include="WebCompontent\ui-grid-dist\ui-grid.min.js" />
+    <Content Include="WebCompontent\ui-grid-dist\ui-grid.svg" />
+    <Content Include="WebCompontent\ui-grid\Gruntfile.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\aliases.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\base.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\bump.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\changelog.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\clean.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\concat.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\connect.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\copy.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\cut-release.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\fontello.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\gh-pages.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\jscs.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\jshint.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\karma.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\less.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\ngdocs.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\ngtemplates.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\nugetpack.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\nugetpush.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\protractor.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\shell.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\uglify.js" />
+    <Content Include="WebCompontent\ui-grid\grunt\watch.js" />
+    <Content Include="WebCompontent\ui-grid\lib\grunt\plugins.js" />
+    <Content Include="WebCompontent\ui-grid\lib\grunt\utils.js" />
+    <Content Include="WebCompontent\ui-grid\lib\test\angular\1.4.3\angular-animate.js" />
+    <Content Include="WebCompontent\ui-grid\lib\test\angular\1.4.3\angular-mocks.js" />
+    <Content Include="WebCompontent\ui-grid\lib\test\angular\1.4.3\angular.js" />
+    <Content Include="WebCompontent\ui-grid\lib\test\angular\1.5.0\angular-animate.js" />
+    <Content Include="WebCompontent\ui-grid\lib\test\angular\1.5.0\angular-mocks.js" />
+    <Content Include="WebCompontent\ui-grid\lib\test\angular\1.5.0\angular.js" />
+    <Content Include="WebCompontent\ui-grid\lib\test\classList.polyFill.js" />
+    <Content Include="WebCompontent\ui-grid\lib\test\jquery.simulate.js" />
+    <Content Include="WebCompontent\ui-grid\misc\demo\cellTemplate.html" />
+    <Content Include="WebCompontent\ui-grid\misc\demo\col-swap.html" />
+    <Content Include="WebCompontent\ui-grid\misc\demo\filtertoggle.html" />
+    <Content Include="WebCompontent\ui-grid\misc\demo\grid-accessiblility.html" />
+    <Content Include="WebCompontent\ui-grid\misc\demo\grid-directive.html" />
+    <Content Include="WebCompontent\ui-grid\misc\demo\grid-in-tabs.html" />
+    <Content Include="WebCompontent\ui-grid\misc\demo\grid-save.html" />
+    <Content Include="WebCompontent\ui-grid\misc\demo\leak-grid-many-options.html" />
+    <Content Include="WebCompontent\ui-grid\misc\demo\leak-grid-no-options.html" />
+    <Content Include="WebCompontent\ui-grid\misc\demo\leak-main.html" />
+    <Content Include="WebCompontent\ui-grid\misc\demo\leak-no-grid.html" />
+    <Content Include="WebCompontent\ui-grid\misc\demo\leak-testing.html" />
+    <Content Include="WebCompontent\ui-grid\misc\demo\modal.html" />
+    <Content Include="WebCompontent\ui-grid\misc\demo\overflow-problem.html" />
+    <Content Include="WebCompontent\ui-grid\misc\demo\pinning.html" />
+    <Content Include="WebCompontent\ui-grid\misc\demo\subgrid.html" />
+    <Content Include="WebCompontent\ui-grid\misc\doc\css\bootstrap-flatly.min.css" />
+    <Content Include="WebCompontent\ui-grid\misc\doc\css\prettify.css" />
+    <Content Include="WebCompontent\ui-grid\misc\doc\templates\nav.html" />
+    <Content Include="WebCompontent\ui-grid\misc\publish\index.js" />
+    <Content Include="WebCompontent\ui-grid\misc\site\css\site.css" />
+    <Content Include="WebCompontent\ui-grid\misc\site\customizer\index.html" />
+    <Content Include="WebCompontent\ui-grid\misc\site\data\dataTemplates.txt" />
+    <Content Include="WebCompontent\ui-grid\misc\site\index.html" />
+    <Content Include="WebCompontent\ui-grid\misc\site\js\bootstrap.min.js" />
+    <Content Include="WebCompontent\ui-grid\misc\site\js\customizer.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\auto-resize-grid\js\auto-resize.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\auto-resize-grid\test\auto-resize-grid.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\cellnav\js\cellnav.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\cellnav\test\uiGridCellNavDirective.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\cellnav\test\uiGridCellNavFactory.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\cellnav\test\uiGridCellNavService.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\edit\js\gridEdit.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\edit\templates\cellEditor.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\edit\templates\dropdownEditor.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\edit\templates\fileChooserEditor.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\edit\test\uiGridCell.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\edit\test\uiGridCellWithCellNav.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\edit\test\uiGridCellWithDropdown.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\edit\test\uiGridEditDirective.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\edit\test\uiGridEditService.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\edit\test\uiGridInputDirective.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\empty-base-layer\js\emptyBaseLayer.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\empty-base-layer\templates\emptyBaseLayerContainer.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\empty-base-layer\test\emptyBaseLayer.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\expandable\js\expandable.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\expandable\templates\expandableRow.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\expandable\templates\expandableRowHeader.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\expandable\templates\expandableScrollFiller.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\expandable\templates\expandableTopRowHeader.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\expandable\test\expandable.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\exporter\js\exporter.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\exporter\templates\csvLink.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\exporter\test\exporter.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\grouping\js\grouping.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\grouping\test\grouping.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\importer\js\importer.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\importer\templates\importerMenuItem.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\importer\templates\importerMenuItemContainer.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\importer\test\importer.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\infinite-scroll\js\infinite-scroll.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\infinite-scroll\test\infiniteScroll.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\move-columns\js\column-movable.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\move-columns\test\column-movable.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\pagination\js\pagination.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\pagination\templates\pagination.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\pagination\test\pagination.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\pinning\js\pinning.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\pinning\test\pinning.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\pinning\test\uiGridPinningService.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\resize-columns\js\ui-grid-column-resizer.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\resize-columns\templates\columnResizer.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\resize-columns\test\resizeColumns.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\resize-columns\test\resizeColumnsService.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\row-edit\js\gridRowEdit.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\row-edit\test\uiGridRowEditService.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\saveState\js\saveState.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\saveState\test\saveState.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\selection\js\selection.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\selection\templates\gridFooterSelectedItems.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\selection\templates\selectionHeaderCell.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\selection\templates\selectionRowHeader.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\selection\templates\selectionRowHeaderButtons.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\selection\templates\selectionSelectAllButtons.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\selection\test\uiGridSelectionDirective.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\selection\test\uiGridSelectionService.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\tree-base\js\tree-base.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\tree-base\templates\treeBaseExpandAllButtons.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\tree-base\templates\treeBaseHeaderCell.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\tree-base\templates\treeBaseRowHeader.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\tree-base\templates\treeBaseRowHeaderButtons.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\tree-base\test\tree-base.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\tree-view\js\tree-view.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\tree-view\test\tree-view.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\validate\js\gridValidate.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\validate\templates\cellTitleValidator.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\validate\templates\cellTooltipValidator.html" />
+    <Content Include="WebCompontent\ui-grid\src\features\validate\test\uiGridValidateDirective.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\features\validate\test\uiGridValidateService.spec.js" />
+    <Content Include="WebCompontent\ui-grid\src\font\ui-grid.svg" />
+    <Content Include="WebCompontent\ui-grid\src\img\arrow.colors-default.svg" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\bootstrap.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\constants.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\directives\ui-grid-cell.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\directives\ui-grid-column-menu.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\directives\ui-grid-filter.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\directives\ui-grid-footer-cell.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\directives\ui-grid-footer.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\directives\ui-grid-grid-footer.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\directives\ui-grid-group-panel.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\directives\ui-grid-header-cell.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\directives\ui-grid-header.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\directives\ui-grid-menu-button.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\directives\ui-grid-menu.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\directives\ui-grid-one-bind.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\directives\ui-grid-render-container.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\directives\ui-grid-row.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\directives\ui-grid-style.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\directives\ui-grid-viewport.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\directives\ui-grid-visible.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\directives\ui-grid.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\directives\ui-pinned-container.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\factories\Grid.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\factories\GridApi.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\factories\GridColumn.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\factories\GridOptions.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\factories\GridRenderContainer.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\factories\GridRow.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\factories\GridRowColumn.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\factories\ScrollEvent.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\services\gridClassFactory.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\services\rowSearcher.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\services\rowSorter.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\core\services\ui-grid-util.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\cs.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\da.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\de.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\en.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\es.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\fa.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\fi.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\fr.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\he.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\hy.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\it.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\ja.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\ko.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\nl.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\no.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\pl.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\pt-br.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\pt.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\ro.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\ru.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\sk.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\sv.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\ta.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\tr.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\ua.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\ui-i18n.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\zh-cn.js" />
+    <Content Include="WebCompontent\ui-grid\src\js\i18n\zh-tw.js" />
+    <Content Include="WebCompontent\ui-grid\src\templates\ui-grid\ui-grid-filter.html" />
+    <Content Include="WebCompontent\ui-grid\src\templates\ui-grid\ui-grid-footer.html" />
+    <Content Include="WebCompontent\ui-grid\src\templates\ui-grid\ui-grid-grid-footer.html" />
+    <Content Include="WebCompontent\ui-grid\src\templates\ui-grid\ui-grid-group-panel.html" />
+    <Content Include="WebCompontent\ui-grid\src\templates\ui-grid\ui-grid-header.html" />
+    <Content Include="WebCompontent\ui-grid\src\templates\ui-grid\ui-grid-menu-button.html" />
+    <Content Include="WebCompontent\ui-grid\src\templates\ui-grid\ui-grid-no-header.html" />
+    <Content Include="WebCompontent\ui-grid\src\templates\ui-grid\ui-grid-row.html" />
+    <Content Include="WebCompontent\ui-grid\src\templates\ui-grid\ui-grid.html" />
+    <Content Include="WebCompontent\ui-grid\src\templates\ui-grid\uiGridCell.html" />
+    <Content Include="WebCompontent\ui-grid\src\templates\ui-grid\uiGridColumnMenu.html" />
+    <Content Include="WebCompontent\ui-grid\src\templates\ui-grid\uiGridFooterCell.html" />
+    <Content Include="WebCompontent\ui-grid\src\templates\ui-grid\uiGridHeaderCell.html" />
+    <Content Include="WebCompontent\ui-grid\src\templates\ui-grid\uiGridMenu.html" />
+    <Content Include="WebCompontent\ui-grid\src\templates\ui-grid\uiGridMenuItem.html" />
+    <Content Include="WebCompontent\ui-grid\src\templates\ui-grid\uiGridRenderContainer.html" />
+    <Content Include="WebCompontent\ui-grid\src\templates\ui-grid\uiGridViewport.html" />
+    <Content Include="WebCompontent\ui-grid\test\e2e\gridObjectTestUtils.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\e2e\gridTestUtils.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\e2e\test.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\karma.conf.js" />
+    <Content Include="WebCompontent\ui-grid\test\karma.debug.conf.js" />
+    <Content Include="WebCompontent\ui-grid\test\protractor.ci.conf.js" />
+    <Content Include="WebCompontent\ui-grid\test\protractor.conf.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\directives\ui-grid-column-menu.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\directives\ui-grid-footer-cell.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\directives\ui-grid-header-cell.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\directives\ui-grid-menu-button.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\directives\ui-grid-menu.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\directives\ui-grid-one-bind.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\directives\ui-grid-row.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\directives\ui-grid-style.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\directives\ui-grid.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\directives\uiGridCell.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\directives\uiGridController.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\factories\Grid.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\factories\GridApi.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\factories\GridColumn.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\factories\GridOptions.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\factories\GridRenderContainer.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\factories\GridRow.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\row-filtering.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\row-sorting.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\services\GridClassFactory.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\services\rowSearcher.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\core\services\ui-grid-util.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\i18n\directives.spec.js" />
+    <Content Include="WebCompontent\ui-grid\test\unit\i18n\i18nService.spec.js" />
+    <Content Include="WebCompontent\ui-grid\ui-grid.min.css" />
+    <Content Include="WebCompontent\ui-grid\ui-grid.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="WebCompontent\ui-grid\.editorconfig" />
+    <Content Include="WebCompontent\ui-grid\.gitattributes" />
+    <Content Include="WebCompontent\ui-grid\.gitignore" />
+    <Content Include="WebCompontent\ui-grid\.jscs.json" />
+    <Content Include="WebCompontent\ui-grid\.jscs.json.todo" />
+    <Content Include="WebCompontent\ui-grid\.travis.yml" />
+    <Content Include="WebCompontent\ui-grid\3.0_UPGRADE.md" />
+    <Content Include="WebCompontent\ui-grid\bower.json" />
+    <Content Include="WebCompontent\ui-grid\Brainstorm.md" />
+    <Content Include="WebCompontent\ui-grid\CHANGELOG.md" />
+    <Content Include="WebCompontent\ui-grid\CONTRIBUTING.md" />
+    <Content Include="WebCompontent\ui-grid\design\EDIT_AND_CELLNAV.md" />
+    <Content Include="WebCompontent\ui-grid\design\RENDERING_CYCLE.md" />
+    <Content Include="WebCompontent\ui-grid\design\SCROLLING_AND_VIRTUALISATION.md" />
+    <Content Include="WebCompontent\ui-grid\DEVELOPER.md" />
+    <Content Include="WebCompontent\ui-grid\FIRST_TIMER.md" />
+    <Content Include="WebCompontent\ui-grid\grunt\font-config.json" />
+    <Content Include="WebCompontent\ui-grid\ISSUE_TEMPLATE.md" />
+    <Content Include="WebCompontent\ui-grid\lib\sauce\sauce_connect_block.sh" />
+    <Content Include="WebCompontent\ui-grid\lib\sauce\sauce_connect_setup.sh" />
+    <Content Include="WebCompontent\ui-grid\lib\test\angular\files.json" />
+    <Content Include="WebCompontent\ui-grid\LICENSE.md" />
+    <Content Include="WebCompontent\ui-grid\misc\api\index.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\publish\README.md" />
+    <Content Include="WebCompontent\ui-grid\misc\site\customizer\themes\autumn.json" />
+    <Content Include="WebCompontent\ui-grid\misc\site\customizer\themes\sky.json" />
+    <Content Include="WebCompontent\ui-grid\misc\site\customizer\themes\themes.json" />
+    <Content Include="WebCompontent\ui-grid\misc\site\data\100.json" />
+    <Content Include="WebCompontent\ui-grid\misc\site\data\10000.json" />
+    <Content Include="WebCompontent\ui-grid\misc\site\data\10000_complex.json" />
+    <Content Include="WebCompontent\ui-grid\misc\site\data\1000_columns.json" />
+    <Content Include="WebCompontent\ui-grid\misc\site\data\100_ASC.json" />
+    <Content Include="WebCompontent\ui-grid\misc\site\data\100_columns.json" />
+    <Content Include="WebCompontent\ui-grid\misc\site\data\100_DESC.json" />
+    <Content Include="WebCompontent\ui-grid\misc\site\data\100_female.json" />
+    <Content Include="WebCompontent\ui-grid\misc\site\data\100_male.json" />
+    <Content Include="WebCompontent\ui-grid\misc\site\data\5.json" />
+    <Content Include="WebCompontent\ui-grid\misc\site\data\500.json" />
+    <Content Include="WebCompontent\ui-grid\misc\site\data\500_complex.json" />
+    <Content Include="WebCompontent\ui-grid\misc\site\data\50_columns.json" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\098_contributing_to_ui-grid.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\099_upgrading_from_2.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\100_preReqs.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\101_intro.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\102_sorting.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\103_filtering.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\104_i18n.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\105_footer.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\106_binding.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\108_hidden_grids.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\109_multiple_grids.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\110_grid_in_modal.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\111_cellClass.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\112_swapping_data.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\113_adding_and_removing_columns.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\114_row_header.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\115_headerCellClass.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\116_fonts_and_installation.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\117_tooltips.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\120_RTL.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\121_grid_menu.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\122_accessibility.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\190_large_dataset.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\191_horizontal_scrolling.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\200_features.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\201_editable.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\202_cellnav.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\203_pinning.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\204_column_resizing.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\205_row_editable.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\206_exporting_data.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\207_import.csv" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\207_import.json" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\207_importing_data.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\208_save_state.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\209_grouping.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\210_selection.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\212_infinite_scroll.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\213_auto_resizing.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\214_pagination.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\215_treeView.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\216_expandable_grid.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\217_column_moving.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\218_empty_grid_base_layer.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\299_third_party_features.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\301_editableOnFocus.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\302_custom_header.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\303_customizing_column_menu.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\304_two_grids.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\305_appScope.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\306_custom_filters.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\307_external_sorting.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\308_external_filtering.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\309_editable_with_cellnav.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\311_importing_data_with_rowedit.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\312_exporting_data_complex.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\313_custom_interpolation_symbols.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\314_external_pagination.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\315_editable_cascading_dropdown.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\316_dynamic_data_changes.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\317_custom_templates.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\319_complex_trees.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\320_complex_grouping.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\321_singleFilter.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\322_validation.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\323_more_binding.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\401_AllFeatures.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\402_GridIsScrolling.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\403_end_to_end_testing.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\404_large_data_sets_and_performance.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\405_exporting_all_data_complex.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\406_custom_pagination.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\407_custom_scrolling.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\499_FAQ.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\misc\tutorial\index.ngdoc" />
+    <Content Include="WebCompontent\ui-grid\package.json" />
+    <Content Include="WebCompontent\ui-grid\planning30.md" />
+    <Content Include="WebCompontent\ui-grid\README.md" />
+    <Content Include="WebCompontent\ui-grid\src\features\cellnav\less\cellNav.less" />
+    <Content Include="WebCompontent\ui-grid\src\features\edit\less\edit.less" />
+    <Content Include="WebCompontent\ui-grid\src\features\empty-base-layer\less\emptyBaseLayer.less" />
+    <Content Include="WebCompontent\ui-grid\src\features\expandable\less\expandable.less" />
+    <Content Include="WebCompontent\ui-grid\src\features\exporter\less\exporter.less" />
+    <Content Include="WebCompontent\ui-grid\src\features\grouping\less\grouping.less" />
+    <Content Include="WebCompontent\ui-grid\src\features\importer\less\importer.less" />
+    <Content Include="WebCompontent\ui-grid\src\features\move-columns\less\colMovable.less" />
+    <Content Include="WebCompontent\ui-grid\src\features\pagination\less\pagination.less" />
+    <Content Include="WebCompontent\ui-grid\src\features\pinning\less\pinning.less" />
+    <Content Include="WebCompontent\ui-grid\src\features\resize-columns\less\column-resizer.less" />
+    <Content Include="WebCompontent\ui-grid\src\features\row-edit\less\rowEdit.less" />
+    <Content Include="WebCompontent\ui-grid\src\features\selection\less\selection.less" />
+    <Content Include="WebCompontent\ui-grid\src\features\tree-base\less\tree-base.less" />
+    <Content Include="WebCompontent\ui-grid\src\features\tree-view\less\tree-view.less" />
+    <Content Include="WebCompontent\ui-grid\src\features\validate\less\validate.less" />
+    <Content Include="WebCompontent\ui-grid\src\font\ui-grid.eot" />
+    <Content Include="WebCompontent\ui-grid\src\font\ui-grid.ttf" />
+    <Content Include="WebCompontent\ui-grid\src\font\ui-grid.woff" />
+    <Content Include="WebCompontent\ui-grid\src\less\animation.less" />
+    <Content Include="WebCompontent\ui-grid\src\less\body.less" />
+    <Content Include="WebCompontent\ui-grid\src\less\bootstrap\bootstrap.less" />
+    <Content Include="WebCompontent\ui-grid\src\less\cell.less" />
+    <Content Include="WebCompontent\ui-grid\src\less\elements.less" />
+    <Content Include="WebCompontent\ui-grid\src\less\footer.less" />
+    <Content Include="WebCompontent\ui-grid\src\less\goups.less" />
+    <Content Include="WebCompontent\ui-grid\src\less\grid.less" />
+    <Content Include="WebCompontent\ui-grid\src\less\header.less" />
+    <Content Include="WebCompontent\ui-grid\src\less\icons.less" />
+    <Content Include="WebCompontent\ui-grid\src\less\main.less" />
+    <Content Include="WebCompontent\ui-grid\src\less\menu.less" />
+    <Content Include="WebCompontent\ui-grid\src\less\rtl.less" />
+    <Content Include="WebCompontent\ui-grid\src\less\sorting.less" />
+    <Content Include="WebCompontent\ui-grid\src\less\variables.less" />
+    <Content Include="WebCompontent\ui-grid\TODO.md" />
+    <Content Include="WebCompontent\ui-grid\travis_build.sh" />
+    <Content Include="WebCompontent\ui-grid\travis_print_logs.sh" />
+    <Content Include="WebCompontent\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="WebCompontent\bootstrap\css\bootstrap.css.map" />
+    <Content Include="WebCompontent\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="WebCompontent\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="WebCompontent\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Views\Home\UIGridBasic.cshtml" />
+    <Content Include="Views\Home\ProductIntroduce.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="WebCompontent\ui-grid-dist\4.0.0\ui-grid.eot" />
+    <Content Include="WebCompontent\ui-grid-dist\4.0.0\ui-grid.ttf" />
+    <Content Include="WebCompontent\ui-grid-dist\4.0.0\ui-grid.woff" />
+    <Content Include="WebCompontent\ui-grid-dist\bower.json" />
+    <Content Include="WebCompontent\ui-grid-dist\less\animation.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\body.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\bootstrap\bootstrap.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\cell.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\cellnav\less\cellNav.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\edit\less\edit.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\elements.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\empty-base-layer\less\emptyBaseLayer.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\expandable\less\expandable.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\exporter\less\exporter.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\footer.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\goups.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\grid.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\grouping\less\grouping.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\header.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\icons.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\importer\less\importer.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\main.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\menu.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\move-columns\less\colMovable.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\pagination\less\pagination.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\pinning\less\pinning.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\resize-columns\less\column-resizer.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\row-edit\less\rowEdit.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\rtl.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\selection\less\selection.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\sorting.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\tree-base\less\tree-base.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\tree-view\less\tree-view.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\validate\less\validate.less" />
+    <Content Include="WebCompontent\ui-grid-dist\less\variables.less" />
+    <Content Include="WebCompontent\ui-grid-dist\package.json" />
+    <Content Include="WebCompontent\ui-grid-dist\README.md" />
+    <Content Include="WebCompontent\ui-grid-dist\ui-grid.eot" />
+    <Content Include="WebCompontent\ui-grid-dist\ui-grid.ttf" />
+    <Content Include="WebCompontent\ui-grid-dist\ui-grid.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>25380</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:25380/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
