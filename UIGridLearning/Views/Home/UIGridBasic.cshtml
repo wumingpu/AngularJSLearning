@@ -5,25 +5,34 @@
 
 <link href="~/WebCompontent/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 <link href="~/WebCompontent/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />
-<link href="~/WebCompontent/ui-grid-dist/ui-grid.min.css" rel="stylesheet" />
+<link href="~/WebCompontent/ui-grid-dist/ui-grid-white.css" rel="stylesheet" />
 
 <script src="~/WebCompontent/jQuery-3.1.1.min.js"></script>
 <script src="~/WebCompontent/angularjs-1.2.32.min.js"></script>
 <script src="~/WebCompontent/bootstrap/js/bootstrap.min.js"></script>
 <script src="~/WebCompontent/ui-grid-dist/ui-grid.min.js"></script>
-
+<script src="~/WebCompontent/ui-grid-dist/ui-grid-csv.js"></script>
+<script src="~/WebCompontent/ui-grid-dist/ui-grid-pdfmake.js"></script>
+<script src="~/WebCompontent/ui-grid-dist/ui-grid-vfs_fonts.js"></script>
 @*<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-touch.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
-<script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
-<script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
-<script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
-<script src="/release/ui-grid.js"></script>
-<script src="/release/ui-grid.css"></script>*@
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+    <script src="/release/ui-grid.js"></script>
+    <script src="/release/ui-grid.css"></script>*@
 
 @*<div ng-controller="MainCtrl">
-    <div id="grid1" ui-grid="{ data: myData }" class="grid"></div>
-</div>*@
+        <div id="grid1" ui-grid="{ data: myData }" class="grid"></div>
+    </div>*@
+<style type="text/css">
+    .grid {
+        width: 100%;
+        /*height:auto;*/
+        /*height: 400px;*/
+    }
+</style>
 <div class="row" ng-app="app" ng-controller="MainCtrl">
     <div class="col-lg-12">
         <div class="panel panel-default">
@@ -31,88 +40,137 @@
                 Basic Example
             </div>
             <div class="panel-body">
-                <div id="grid1" ui-grid="{ data: myData }" class="grid"></div>
+                <div id="grid1" ui-grid="gridOptions" class="grid" ui-grid-edit ui-grid-cellnav ui-grid-auto-resize ng-style="getTableHeight()" ui-grid-pagination ui-grid-exporter ui-grid-pinning ui-grid-resize-columns ui-grid-selection></div> @*ui-grid-move-columns*@
             </div>
         </div>
     </div>
 </div>
 <script type="text/javascript">
-    var app = angular.module('app', ['ui.grid']);
+    var app = angular.module('app', ['ui.grid', 'ui.grid.edit', 'ui.grid.cellNav', 'ui.grid.autoResize', 'ui.grid.pagination', 'ui.grid.exporter', 'ui.grid.pinning', 'ui.grid.resizeColumns', 'ui.grid.selection']);//, 'ui.grid.moveColumns'
 
-    app.controller('MainCtrl', ['$scope', function ($scope) {
+    app.controller('MainCtrl', ['$http', '$scope', function ($http, $scope) {
+        $scope.gridOptions = {
+            enableGridMenu: true,
+            gridMenuShowHideColumns: true,
+            exporterMenuCsv: true,
+            exporterMenuPdf: false,
+            paginationPageSizes: [10, 25, 50, 75],
+            paginationPageSize: 10,
+            multiSelect:true,
+            enableRowSelection: true,
+            enableRowHeaderSelection: false,
+            enableCellEditOnFocus: true
+        };
 
-        $scope.myData = [
-          {
-              "firstName": "Cox",
-              "lastName": "Carney",
-              "company": "Enormo",
-              "employed": true,
-              "firstName1": "Cox",
-              "lastName1": "Carney",
-              "company1": "Enormo",
-              "firstName2": "Cox",
-              "lastName2": "Carney",
-              "company2": "Enormo",
-              "employed1": true
-          },
-          {
-              "firstName": "Lorraine",
-              "lastName": "Wise",
-              "company": "Comveyer",
-              "employed": false,
-              "firstName1": "Cox",
-              "lastName1": "Carney",
-              "company1": "Enormo",
-              "firstName2": "Cox",
-              "lastName2": "Carney",
-              "company2": "Enormo",
-              "employed1": true
-          },
-          {"firstName": "Lorraine","lastName": "Wise","company": "Comveyer","employed": false,"firstName1": "Cox","lastName1": "Carney","company1": "Enormo","firstName2": "Cox","lastName2": "Carney","company2": "Enormo","employed1": true},
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-          { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
-
-          {
-              "firstName": "Nancy",
-              "lastName": "Waters",
-              "company": "Fuelton",
-              "employed": false,
-              "firstName1": "Cox",
-              "lastName1": "Carney",
-              "company1": "Enormo",
-              "firstName2": "Cox",
-              "lastName2": "Carney",
-              "company2": "Enormo",
-              "employed1": true
-          }
+        $scope.gridOptions.columnDefs = [
+          { name: 'id', enableCellEditOnFocus: false, width: 50 },//, width: 50
+          { name: 'name', width: 100, pinnedLeft: true },//, width: 100
+          { name: 'age', width: 100, pinnedRight: true },//, width: 100
+          { name: 'address.street', width: 150 },//, width: 150
+          { name: 'address.city', width: 150 },//, width: 150
+          { name: 'address.state', width: 50 },//, width: 50
+          { name: 'address.zip', width: 50 },//, width: 50
+          { name: 'company', width: 100 },//, width: 100
+          { name: 'email', width: 100 },//, width: 100
+          { name: 'phone', enableCellEditOnFocus: false, width: 200 },//, width: 200
+          { name: 'about', enableCellEdit: true, width: 300 },//, width: 300
+          { name: 'friends[0].name', displayName: '1st friend', width: 150 },//, width: 150
+          { name: 'friends[1].name', displayName: '2nd friend', width: 150 },//, width: 150
+          { name: 'friends[2].name', displayName: '3rd friend', width: 150 },//, width: 150
+                   {
+                       name: 'ShowScope',
+                       width: 150,
+                       pinnedRight: true,
+                       cellTemplate: '<button class="btn btn-primary" ng-click="grid.appScope.showMe()">Click Me</button>'
+                   }
         ];
+        $scope.showMe = function () {
+            alert("111");
+        };
+
+        $http.get('/500_complex.json', {}).success(function (data) {
+            $scope.gridOptions.data = data;
+        });
+
+        $scope.getTableHeight = function () {
+            var rowHeight = 30; // your row height
+            var headerHeight = 30; // your header height
+            return {
+                height: (($scope.gridOptions.paginationPageSize + 2) * rowHeight + headerHeight - 8) + "px"
+            };
+        };
+        //$scope.myData = [
+        //  {
+        //      "firstName": "Cox",
+        //      "lastName": "Carney",
+        //      "company": "Enormo",
+        //      "employed": true,
+        //      "firstName1": "Cox",
+        //      "lastName1": "Carney",
+        //      "company1": "Enormo",
+        //      "firstName2": "Cox",
+        //      "lastName2": "Carney",
+        //      "company2": "Enormo",
+        //      "employed1": true
+        //  },
+        //  {
+        //      "firstName": "Lorraine",
+        //      "lastName": "Wise",
+        //      "company": "Comveyer",
+        //      "employed": false,
+        //      "firstName1": "Cox",
+        //      "lastName1": "Carney",
+        //      "company1": "Enormo",
+        //      "firstName2": "Cox",
+        //      "lastName2": "Carney",
+        //      "company2": "Enormo",
+        //      "employed1": true
+        //  },
+        //  {"firstName": "Lorraine","lastName": "Wise","company": "Comveyer","employed": false,"firstName1": "Cox","lastName1": "Carney","company1": "Enormo","firstName2": "Cox","lastName2": "Carney","company2": "Enormo","employed1": true},
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+        //  { "firstName": "Lorraine", "lastName": "Wise", "company": "Comveyer", "employed": false, "firstName1": "Cox", "lastName1": "Carney", "company1": "Enormo", "firstName2": "Cox", "lastName2": "Carney", "company2": "Enormo", "employed1": true },
+
+        //  {
+        //      "firstName": "Nancy",
+        //      "lastName": "Waters",
+        //      "company": "Fuelton",
+        //      "employed": false,
+        //      "firstName1": "Cox",
+        //      "lastName1": "Carney",
+        //      "company1": "Enormo",
+        //      "firstName2": "Cox",
+        //      "lastName2": "Carney",
+        //      "company2": "Enormo",
+        //      "employed1": true
+        //  }
+        //];
     }]);
 </script>

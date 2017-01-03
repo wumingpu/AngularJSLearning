@@ -89,6 +89,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="500_complex.json" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -104,6 +105,10 @@
     <Content Include="WebCompontent\HomeStype.css" />
     <Content Include="WebCompontent\jQuery-3.1.1.min.js" />
     <Content Include="WebCompontent\ui-grid-dist\4.0.0\ui-grid.svg" />
+    <Content Include="WebCompontent\ui-grid-dist\ui-grid-csv.js" />
+    <Content Include="WebCompontent\ui-grid-dist\ui-grid-pdfmake.js" />
+    <Content Include="WebCompontent\ui-grid-dist\ui-grid-vfs_fonts.js" />
+    <Content Include="WebCompontent\ui-grid-dist\ui-grid-white.css" />
     <Content Include="WebCompontent\ui-grid-dist\ui-grid.css" />
     <Content Include="WebCompontent\ui-grid-dist\ui-grid.js" />
     <Content Include="WebCompontent\ui-grid-dist\ui-grid.min.css" />
