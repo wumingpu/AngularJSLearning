@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIGridLearning", "UIGridLea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicrosoftAccountLogin", "MicrosoftAccountLogin\MicrosoftAccountLogin.csproj", "{4AADFF58-8F9A-4D70-9822-C0F9A2E1CDB3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SBAdminTesting", "SBAdminTesting\SBAdminTesting.csproj", "{F611198A-43B4-4007-B467-1897F553AA07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminLTELearning", "AdminLTELearning\AdminLTELearning.csproj", "{307CB5D8-D24A-49D7-B099-80E7798BCFFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{4AADFF58-8F9A-4D70-9822-C0F9A2E1CDB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AADFF58-8F9A-4D70-9822-C0F9A2E1CDB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AADFF58-8F9A-4D70-9822-C0F9A2E1CDB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F611198A-43B4-4007-B467-1897F553AA07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F611198A-43B4-4007-B467-1897F553AA07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F611198A-43B4-4007-B467-1897F553AA07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F611198A-43B4-4007-B467-1897F553AA07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{307CB5D8-D24A-49D7-B099-80E7798BCFFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{307CB5D8-D24A-49D7-B099-80E7798BCFFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{307CB5D8-D24A-49D7-B099-80E7798BCFFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{307CB5D8-D24A-49D7-B099-80E7798BCFFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
