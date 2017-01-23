@@ -1,0 +1,54 @@
+﻿<html>
+  <head>
+    <script src="./i18next.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-browser-languagedetector/1.0.1/i18nextBrowserLanguageDetector.min.js" ></script>
+  </head>
+
+  <body>
+
+    <div>open console</div>
+
+    <script>
+      // use plugins and options as needed, for options, detail see
+      // http://i18next.com/docs/
+      i18next
+      .use(window.i18nextBrowserLanguageDetector)//
+      .init({
+        lng: 'de', // evtl. use language-detector https://github.com/i18next/i18next-browser-languageDetector
+        resources: { // evtl. load via xhr https://github.com/i18next/i18next-xhr-backend
+            "de-DE": {
+                "translation": {
+                    "key1": "value of key 1 in de-DE",
+                    "key": {
+                        "with": {
+                            "sub": "value deeper in object in de-DE"
+                        }
+                    }
+                }
+            },
+            "de": {
+                "translation": {
+                    "key1": "value of key 1 in de",
+                    "key2": "value of key 2 in de"
+                }
+            },
+            "en": {
+                "translation": {
+                    "key1": "value of key 1 in en",
+                    "key2": "value of key 2 in en",
+                    "key3": "value of key 3 in en"
+                }
+            }
+        },
+        debug: true
+      }, function(err, t) {
+        console.warn(i18next.t('key1'));
+        console.warn(i18next.t('key2'));
+        console.warn(i18next);
+      });
+      console.log(i18next.t('key1'));
+    </script>
+
+  </body>
+
+</html>

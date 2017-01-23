@@ -23,6 +23,27 @@
                 </div>
             </div>
         </div>*@
+    <script src="~/WebCompontent/i18next/i18next.min.js"></script>
+    <script src="~/WebCompontent/i18next-xhr-backend/i18nextXHRBackend.min.js"></script>
+    <script type="text/javascript">        
+        window.i18next
+            //.use(window.i18nextBrowserLanguageDetector)
+            .use(i18nextXHRBackend)
+            .init({
+            debug: true,
+            lng: 'de', // If not given, i18n will detect the browser language.
+            fallbackLng: 'dev', // Default is dev
+            backend: {
+                loadPath: '/locales/{{lng}}/{{ns}}.json'
+            },
+            //resGetPath: "/Locales/{{lng}}.json",
+            useCookie: false,
+            useLocalStorage: false
+        }, function (err, t) {
+            console.log('resources loaded');
+            console.log(i18next.t('key1'));
+        });
+    </script>
     @RenderBody()
     @*<div class="container body-content">
 
@@ -33,6 +54,7 @@
         </div>*@
 
     @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>*@
+        <script src="~/Scripts/bootstrap.min.js"></script>*@
+
 </body>
 </html>

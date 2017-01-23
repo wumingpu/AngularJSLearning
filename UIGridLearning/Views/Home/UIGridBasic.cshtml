@@ -1,6 +1,8 @@
-﻿
+﻿@model UIGridLearning.Models.Home
 @{
+    //Session["Lang"] = "zh-cn";
     ViewBag.Title = "UIGridBasic";
+    //ViewBag.Lang = "zh-cn";
 }
 
 <link href="~/WebCompontent/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -40,6 +42,7 @@
                 Basic Example
             </div>
             <div class="panel-body">
+                @*@ViewBag.Lang*@
                 <div id="grid1" ui-grid="gridOptions" class="grid" ui-grid-edit ui-grid-cellnav ui-grid-auto-resize ng-style="getTableHeight()" ui-grid-pagination ui-grid-exporter ui-grid-pinning ui-grid-resize-columns ui-grid-selection></div> @*ui-grid-move-columns*@
             </div>
         </div>
@@ -48,7 +51,10 @@
 <script type="text/javascript">
     var app = angular.module('app', ['ui.grid', 'ui.grid.edit', 'ui.grid.cellNav', 'ui.grid.autoResize', 'ui.grid.pagination', 'ui.grid.exporter', 'ui.grid.pinning', 'ui.grid.resizeColumns', 'ui.grid.selection']);//, 'ui.grid.moveColumns'
 
-    app.controller('MainCtrl', ['$http', '$scope', function ($http, $scope) {
+    app.controller('MainCtrl', ['$http', 'i18nService', '$scope', function ($http, i18nService, $scope) {
+        //$scope.langs = i18nService.getAllLangs();
+        i18nService.setCurrentLang('zh-cn');
+
         $scope.gridOptions = {
             enableGridMenu: true,
             gridMenuShowHideColumns: true,
@@ -56,7 +62,7 @@
             exporterMenuPdf: false,
             paginationPageSizes: [10, 25, 50, 75],
             paginationPageSize: 10,
-            multiSelect:true,
+            multiSelect: true,
             enableRowSelection: true,
             enableRowHeaderSelection: false,
             enableCellEditOnFocus: true

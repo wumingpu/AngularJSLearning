@@ -93,6 +93,23 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="WebCompontent\angular-translate\angular-translate-handler-log.js" />
+    <Content Include="WebCompontent\angular-translate\angular-translate-handler-log.min.js" />
+    <Content Include="WebCompontent\angular-translate\angular-translate-interpolation-messageformat.js" />
+    <Content Include="WebCompontent\angular-translate\angular-translate-interpolation-messageformat.min.js" />
+    <Content Include="WebCompontent\angular-translate\angular-translate-loader-partial.js" />
+    <Content Include="WebCompontent\angular-translate\angular-translate-loader-partial.min.js" />
+    <Content Include="WebCompontent\angular-translate\angular-translate-loader-static-files.js" />
+    <Content Include="WebCompontent\angular-translate\angular-translate-loader-static-files.min.js" />
+    <Content Include="WebCompontent\angular-translate\angular-translate-loader-url.js" />
+    <Content Include="WebCompontent\angular-translate\angular-translate-loader-url.min.js" />
+    <Content Include="WebCompontent\angular-translate\angular-translate-storage-cookie.js" />
+    <Content Include="WebCompontent\angular-translate\angular-translate-storage-cookie.min.js" />
+    <Content Include="WebCompontent\angular-translate\angular-translate-storage-local.js" />
+    <Content Include="WebCompontent\angular-translate\angular-translate-storage-local.min.js" />
+    <Content Include="WebCompontent\angular-translate\angular-translate.js" />
+    <Content Include="WebCompontent\angular-translate\angular-translate.min.js" />
+    <Content Include="WebCompontent\angular-translate\Gruntfile.js" />
     <Content Include="WebCompontent\angularjs-1.2.32.min.js" />
     <Content Include="WebCompontent\bootstrap\css\bootstrap-theme.css" />
     <Content Include="WebCompontent\bootstrap\css\bootstrap-theme.min.css" />
@@ -103,6 +120,10 @@
     <Content Include="WebCompontent\bootstrap\js\bootstrap.min.js" />
     <Content Include="WebCompontent\bootstrap\js\npm.js" />
     <Content Include="WebCompontent\HomeStype.css" />
+    <Content Include="WebCompontent\i18next-xhr-backend\i18nextXHRBackend.js" />
+    <Content Include="WebCompontent\i18next-xhr-backend\i18nextXHRBackend.min.js" />
+    <Content Include="WebCompontent\i18next\i18next.js" />
+    <Content Include="WebCompontent\i18next\i18next.min.js" />
     <Content Include="WebCompontent\jQuery-3.1.1.min.js" />
     <Content Include="WebCompontent\ui-grid-dist\4.0.0\ui-grid.svg" />
     <Content Include="WebCompontent\ui-grid-dist\ui-grid-csv.js" />
@@ -521,6 +542,8 @@
     <Content Include="WebCompontent\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="WebCompontent\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="WebCompontent\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="WebCompontent\angular-translate\bower.json" />
+    <Content Include="WebCompontent\angular-translate\package.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -528,6 +551,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Home.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -541,6 +565,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Views\Home\UIGridBasic.cshtml" />
     <Content Include="Views\Home\ProductIntroduce.cshtml" />
+    <Content Include="locales\de\translation.json" />
+    <Content Include="locales\de-DE\translation.json" />
+    <Content Include="Views\Home\LangTest.cshtml" />
+    <Content Include="Views\Home\AngularTranTest.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -590,8 +618,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Scripts\" />
+    <Folder Include="WebCompontent\angular-1.5.8\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

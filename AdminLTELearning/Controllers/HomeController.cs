@@ -8,15 +8,30 @@ namespace AdminLTELearning.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
-        public ActionResult Index()
+        public ActionResult Layout()
         {
             return View();
+        }
+        // GET: Home
+        public ActionResult Index(bool full)
+        {
+            if (full)
+            {
+                return View();
+            }
+            else if (full)
+            {
+                return PartialView();
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public ActionResult FirstPage()
         {
-            return View();
+            return PartialView();
         }
 
         public ActionResult SecondPage()
